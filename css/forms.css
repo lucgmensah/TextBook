@@ -1,0 +1,64 @@
+.formulaire{
+    max-width: 700px;
+    margin: auto;
+}
+
+.formulaire form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+form .champs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.form-input, .form-select, .form-textarea, .form-radio{
+    width: 100%;
+    /* margin: auto; */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-radio{
+    border: none;
+}
+
+input[type="date"]::before, input[type="time"]::before{
+    content: attr(placeholder)" : ";
+    white-space: pre;
+    color: #5f7481;
+}
+
+input[type="date"]:focus::before, input[type="time"]:focus::before {
+    content:""!important;
+}
+
+.pas-inscrit{
+    text-align: start;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.form-bouton{
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.erreur_message{
+    width: 100%;
+}
