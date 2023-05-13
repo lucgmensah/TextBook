@@ -27,10 +27,10 @@
                 session_start();
 
                 // Stocke l'ID de l'utilisateur dans la variable de session
-                $_SESSION['id_utilisateur'] = $utilisateur['nom_utilisateur'];
+                $_SESSION['utilisateur'] = $utilisateur['nom_utilisateur'];
 
                 // Redirige l'utilisateur vers la page d'accueil
-                header('Location: ../accueil.php');
+                header('Location: ../front/accueil.php');
                 exit();
             } else {
                 // Affiche un message d'erreur si les informations de connexion sont invalides

@@ -2,12 +2,12 @@
     // Démarre la session
     session_start();
 
-    if (!isset($_SESSION['id_utilisateur'])) {
-        header('Location: index.php');
+    if (!isset($_SESSION['utilisateur'])) {
+        header('Location: ../index.php');
         exit();
     }
 
-    require_once 'back/bd.php'; // inclure le fichier connexion.php
+    require_once '../back/bd.php'; // inclure le fichier connexion.php
 
     // Utilisation de la connexion à la base de données
     $stmt = $db->prepare("SELECT * FROM enseigner");
@@ -22,14 +22,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/accueil.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/accueil.css">
         <title>TextBook - Accueil</title>
     </head>
     <body>
-        <header>
-            <h1>TextBook</h1>
-        </header>
+        <?php include("header.php") ?>
 
         <main>
             <div class="accueil">
@@ -41,7 +39,7 @@
                 <br>
                 <div class="actions">
                     <div class="action">
-                        <a href="ajouter_enseignement.html">
+                        <a href="ajouter_enseignement.php">
                             <i class="fas fa-plus"></i>
                             Ajouter un cours effectués
                         </a>
@@ -81,7 +79,7 @@
         </footer>
 
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" crossorigin="anonymous"></script>
         <script>
             
         </script>

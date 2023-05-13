@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 *{
     box-sizing: border-box;
 }
@@ -9,13 +11,18 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 header {
     background-color: #333;
     color: white;
+}
+
+h1 {
+    color: white;
     padding: 20px;
+    padding-left: 20px;
 }
 
 a {
@@ -38,6 +45,18 @@ nav a {
     color: white;
     text-decoration: none;
 }
+
+/* BARRE DE NAVIGATION */
+nav {
+    background-color: #816868;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 
 main {
     margin: 20px;

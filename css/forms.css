@@ -6,8 +6,15 @@
 .formulaire form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     margin: auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    background-color: #fff;
 }
 
 form .champs{

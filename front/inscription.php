@@ -1,5 +1,5 @@
 <?php
-    require_once 'back/bd.php'; // inclure le fichier connexion.php
+    require_once '../back/bd.php'; // inclure le fichier connexion.php
 
     // Utilisation de la connexion à la base de données
     $stmt = $db->prepare("SELECT * FROM specialite");
@@ -14,19 +14,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/forms.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/forms.css">
         <title>TextBook - Inscription</title>
     </head>
     <body>
-        <header>
-            <h1>TextBook</h1>
-        </header>
+        <?php include("header.php") ?>
 
         <main>
             <div class="formulaire">
                 <h2>Inscription</h2>
-                <form action="back/bd_inscription.php" method="post">
+                <form action="../back/bd_inscription.php" method="post">
                     <div class="champs">
                         <input class="form-input" type="text" name="nom" id="nom" placeholder="Nom">
                         <input class="form-input" type="text" name="prenoms" id="prenoms" placeholder="Prénoms">
@@ -54,7 +52,7 @@
                         <input class="form-input" type="password" name="password" id="password" placeholder="Mot de passe">
                     </div>
 
-                    <a class="pas-inscrit" href="index.php">Déjà un compte ? Connectez vous !</a>
+                    <a class="pas-inscrit" href="../index.php">Déjà un compte ? Connectez vous !</a>
                     <input class="form-bouton" type="submit" value="S'enregistrer">
                 </form>
             </div>

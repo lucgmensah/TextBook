@@ -10,9 +10,7 @@
         <title>TextBook - Ajouter enseignement</title>
     </head>
     <body>
-        <header>
-            <h1>TextBook</h1>
-        </header>
+        <?php include("header.php") ?>
 
         <main>
             <div class="formulaire">
@@ -39,7 +37,7 @@
                     </div>
 
                     <input class="form-bouton" type="submit" value="Enregistrer">
-                    <a href="accueil.html">OK</a>
+                    <a href="accueil.php">OK</a>
                 </form>
             </div>
         </main>
