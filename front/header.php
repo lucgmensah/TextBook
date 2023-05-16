@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="enseignant/index.php">
                     <i class="fa-solid fa-chalkboard-user"></i>
                     Enseignants
                 </a>
