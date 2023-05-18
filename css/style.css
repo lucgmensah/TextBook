@@ -21,8 +21,8 @@ header {
 
 h1 {
     color: white;
-    padding: 20px;
-    padding-left: 20px;
+    padding: 50px;
+    margin: 0;
 }
 
 a {
@@ -55,8 +55,6 @@ nav {
     flex-direction: row;
     justify-content: space-between;
 }
-
-
 
 main {
     margin: 20px;

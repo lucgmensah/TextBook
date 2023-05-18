@@ -5,6 +5,9 @@
     // Connexion à la base de données
     require_once 'bd.php';
 
+    // Démarre la session
+    session_start();
+
     // Vérifie si le formulaire a été soumis
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Récupère les données du formulaire
@@ -13,7 +16,7 @@
 
         try {
             // Requête SQL pour récupérer l'utilisateur avec le pseudo donné
-            $sql = "SELECT * FROM utilisateur WHERE nom_utilisateur = :pseudo";
+            $sql = "SELECT * FROM utilisateur WHERE nom_utilisateur = :pseudo- AND actif = 1";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':pseudo', $pseudo);
             $stmt->execute();
@@ -23,8 +26,6 @@
 
             // Vérifie si l'utilisateur existe et si le mot de passe correspond
             if ($utilisateur['actif'] && password_verify($password, $utilisateur['mot_de_passe'])) {
-                // Démarre la session
-                session_start();
 
                 // Stocke l'ID de l'utilisateur dans la variable de session
                 $_SESSION['utilisateur'] = $utilisateur['nom_utilisateur'];
@@ -34,8 +35,9 @@
                 exit();
             } else {
                 // Affiche un message d'erreur si les informations de connexion sont invalides
-                $message_erreur = "Le pseudo ou le mot de passe est incorrect.";
-                header("Location: ../index.php?erreur=".urlencode($message_erreur));
+                $message = "Le pseudo ou le mot de passe est incorrect.";
+                $_SESSION['message'] = $message;
+                header("Location: ../index.php");
                 exit();
             }
         } catch (PDOException $e) {
