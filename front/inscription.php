@@ -5,6 +5,10 @@
     $stmt = $db->prepare("SELECT * FROM specialite");
     $stmt->execute();
     $specialite = $stmt->fetchAll();
+
+    $stmt = $db->prepare("SELECT * FROM grade");
+    $stmt->execute();
+    $grades = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +28,7 @@
         <main>
             <div class="formulaire">
                 <h2>Inscription</h2>
-                <form action="../back/bd_inscription.php" method="post">
+                <form action="../back/bd_ajouter_enseignant.php" method="post">
                     <div class="champs">
                         <input class="form-input" type="text" name="nom" id="nom" placeholder="Nom">
                         <input class="form-input" type="text" name="prenoms" id="prenoms" placeholder="Prénoms">
@@ -40,8 +44,16 @@
                         </div>
                         <input class="form-input" type="text" name="contact" id="contact" placeholder="Contact">
                         <input class="form-input" type="text" name="num_cpte" id="num_cpte" placeholder="Numéro de compte">
+                        <select name="grade" id="grade" class="form-select">
+                            <option value="" selected>Selectionnez votre grade</option>
+                            <?php
+                                foreach($grades as $grade){
+                                    echo "<option value='".$grade['ID_GRADE']."'>".$grade['LIB_GRADE']."</option>";
+                                }
+                            ?>
+                        </select>
                         <select name="ue" id="ue" class="form-select">
-                            <option value="" selected>Selectionnez votre UE</option>
+                            <option value="" selected>Selectionnez votre spécialité</option>
                             <?php
                                 foreach ($specialite as $spe) {
                                     echo '<option value="' . $spe['ID_SPECIALITE'] . '">' . $spe['LIB_SPECIALITE'] . '</option>';

@@ -5,8 +5,9 @@
     require_once 'back/bd.php'; // inclure le fichier connexion.php
 
     // Recuperation d'un eventuel message
-    if (isset($_GET['erreur'])) {
-        $message_erreur = $_GET['erreur'];
+    if (isset($_SESSION['message'])) {
+        $message_erreur = $_SESSION['message'];
+        unset($_SESSION['message']);
     }
 
 ?>
