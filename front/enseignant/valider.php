@@ -34,7 +34,7 @@
         <title>TextBook - Valider une inscription</title>
     </head>
     <body>
-        <?php include("../header.php") ?>
+        <?php include("header.php") ?>
         <?php
             if(isset($message_erreur)){
                 ?><script>

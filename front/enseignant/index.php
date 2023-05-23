@@ -28,7 +28,7 @@
         <title>TextBook - Enseignants</title>
     </head>
     <body>
-        <?php include("../header.php") ?>
+        <?php include("header.php") ?>
 
         <main>
             <div class="accueil">

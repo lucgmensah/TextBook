@@ -18,7 +18,7 @@
         <title>TextBook - Ajouter classe</title>
     </head>
     <body>
-        <?php include("../header.php") ?>
+        <?php include("header.php") ?>
 
         <main>
             <div class="formulaire">
