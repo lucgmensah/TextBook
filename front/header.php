@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="classe/index.php">
                     <i class="fa-solid fa-school"></i>
                     Classes
                 </a>

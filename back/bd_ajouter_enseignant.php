@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pseudo = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
 
+    // Hash le mot de passe
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
     // Connexion a la base de donnees
     require_once 'bd.php';
 
@@ -53,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if ($admin == false){
             header('Location: ../index.php');
         }else{
-            header('Location: ../front/admin/enseignants.php');
+            header('Location: ../front/enseignant/index.php');
         }
         exit();
     } catch (PDOException $e){

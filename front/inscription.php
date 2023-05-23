@@ -34,11 +34,11 @@
                         <input class="form-input" type="text" name="prenoms" id="prenoms" placeholder="Prénoms">
                         <div class="form-radio">
                             <label for="homme">
-                                <input type="radio" name="sexe" id="homme" value="0">
+                                <input type="radio" name="sexe" id="homme" value="1">
                                 Homme
                             </label>
                             <label for="homme">
-                                <input type="radio" name="sexe" id="femme" value="1">
+                                <input type="radio" name="sexe" id="femme" value="2">
                                 Femme
                             </label>
                         </div>
@@ -52,7 +52,7 @@
                                 }
                             ?>
                         </select>
-                        <select name="ue" id="ue" class="form-select">
+                        <select name="specialite" id="specialite" class="form-select">
                             <option value="" selected>Selectionnez votre spécialité</option>
                             <?php
                                 foreach ($specialite as $spe) {

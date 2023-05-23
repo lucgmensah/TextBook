@@ -33,7 +33,7 @@
         <main>
             <div class="formulaire">
                 <h2>Ajouter enseignant</h2>
-                <form action="../../back/bd_ajouter_enseignant.php">
+                <form action="../../back/bd_ajouter_enseignant.php" method="post">
                     <div class="champs">
                         <select name="grade" id="grade" class="form-select">
                             <option value="" selected>Selectionnez le grade</option>
@@ -55,11 +55,11 @@
                         <input class="form-input" type="text" name="prenoms" id="prenoms" placeholder="Prénoms">
                         <div class="form-radio">
                             <label for="homme">
-                                <input type="radio" name="sexe" id="homme" value="0">
+                                <input type="radio" name="sexe" id="homme" value="1">
                                 Homme
                             </label>
                             <label for="homme">
-                                <input type="radio" name="sexe" id="femme" value="1">
+                                <input type="radio" name="sexe" id="femme" value="2">
                                 Femme
                             </label>
                         </div>

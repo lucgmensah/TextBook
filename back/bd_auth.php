@@ -16,7 +16,7 @@
 
         try {
             // Requête SQL pour récupérer l'utilisateur avec le pseudo donné
-            $sql = "SELECT * FROM utilisateur WHERE nom_utilisateur = :pseudo- AND actif = 1";
+            $sql = "SELECT * FROM utilisateur WHERE nom_utilisateur = :pseudo";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':pseudo', $pseudo);
             $stmt->execute();
