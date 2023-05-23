@@ -35,7 +35,7 @@
         <main>
             <div class="formulaire">
                 <h2>Ajouter enseignement</h2>
-                <form action="">
+                <form action="../back/bd_ajouter_enseignement.php" method="post">
                     <div class="champs">
                         <select name="classe" id="classe" class="form-select">
                             <option value="" selected>Selectionnez la classe</option>
@@ -73,7 +73,7 @@
         </footer>
 
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js" crossorigin="anonymous"></script>
         <script>
             // Griser les dates dates superieurs à la date du jour
             var today = new Date().toISOString().split('T')[0];

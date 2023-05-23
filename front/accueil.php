@@ -9,10 +9,11 @@
 
     require_once '../back/bd.php'; // inclure le fichier connexion.php
 
-    // Utilisation de la connexion à la base de données
-    $stmt = $db->prepare("SELECT * FROM enseigner");
+    // Requete pour voir les enseignements en jointure avec les classes, les ue et les enseignants
+    $sql = "SELECT * FROM enseigner INNER JOIN classe ON enseigner.ID_CLASSE = classe.ID_CLASSE INNER JOIN ue ON enseigner.ID_UE = ue.ID_UE INNER JOIN enseignant ON enseigner.ID_ENSEIGNANT = enseignant.ID_ENSEIGNANT";
+    $stmt = $db->prepare($sql);
     $stmt->execute();
-    $result = $stmt->fetchAll();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -52,20 +53,27 @@
                             <tr>
                                 <th>Classe</th>
                                 <th>UE</th>
+                                <th>Enseignant</th>
+                                <th>Date</th>
+                                <th>Heure début</th>
+                                <th>Heure fin</th>
                                 <th>Volume enseignement</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Lorem ipsum</td>
-                                <td>Lorem ipsum</td>
-                                <td>Lorem ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem ipsum</td>
-                                <td>Lorem ipsum</td>
-                                <td>Lorem ipsum</td>
-                            </tr>
+                            <?php
+                                foreach($result as $row){
+                                    echo "<tr>";
+                                    echo "<td>".$row['LIB_CLASSE']."</td>";
+                                    echo "<td>".$row['LIB_UE']."</td>";
+                                    echo "<td>".$row['NOM']." ".$row['PRENOM']."</td>";
+                                    echo "<td>".$row['DATE_ENS']."</td>";
+                                    echo "<td>".$row['DEBUT_ENS']."</td>";
+                                    echo "<td>".$row['FIN_ENS']."</td>";
+                                    echo "<td>".$row['VOL_ENS']."</td>";
+                                    echo "</tr>";
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
