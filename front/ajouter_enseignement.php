@@ -6,6 +6,11 @@
         exit();
     }
 
+    // Recuperer les informations sur la classe
+    if (isset($_GET['classe'])) {
+        $classe_id = $_GET['classe'];
+    }
+
     require_once '../back/bd.php';
 
     $sql = "SELECT * FROM classe";
@@ -41,7 +46,12 @@
                             <option value="" selected>Selectionnez la classe</option>
                             <?php
                                 foreach($classes as $classe){
-                                    echo "<option value='".$classe['ID_CLASSE']."'>".$classe['LIB_CLASSE']."</option>";
+                                    // Si la classe est celle de l'URL, on la selectionne
+                                    if ($classe['ID_CLASSE'] == $classe_id) {
+                                        echo "<option value='".$classe['ID_CLASSE']."' selected>".$classe['LIB_CLASSE']."</option>";
+                                    } else {
+                                        echo "<option value='".$classe['ID_CLASSE']."'>".$classe['LIB_CLASSE']."</option>";
+                                    }
                                 }
                             ?>
                         </select>

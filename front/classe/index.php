@@ -62,7 +62,9 @@
                                 <tr>
                                     <td><?= $classe['LIB_CLASSE']?></td>
                                     <td>
-                                        <i class="fas fa-eye"></i>
+                                        <a href="voir_plus.php?classe=<?php echo $classe['ID_CLASSE'] ?>">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>
