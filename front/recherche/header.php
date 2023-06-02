@@ -7,25 +7,25 @@
     <nav>
         <ul>
             <li>
-                <a href="accueil.php">
+                <a href="../accueil.php">
                     <i class="fa-solid fa-house"></i>
                     Accueil
                 </a>
             </li>
             <li>
-                <a href="enseignant/index.php">
+                <a href="../enseignant/index.php">
                     <i class="fa-solid fa-chalkboard-user"></i>
                     Enseignants
                 </a>
             </li>
             <li>
-                <a href="classe/index.php">
+                <a href="../classe/index.php">
                     <i class="fa-solid fa-school"></i>
                     Classes
                 </a>
             </li>
             <li>
-                <a href="recherche/index.php">
+                <a href="index.php">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     Recherche
                 </a>
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="../back/deconnexion.php">
+                <a href="../../back/deconnexion.php">
                     <i class="fa-solid fa-power-off"></i>
                     Déconnexion
                 </a>

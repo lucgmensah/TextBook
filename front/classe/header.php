@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../../back/deconnexion.php">
                     <i class="fa-solid fa-power-off"></i>
                     Déconnexion
                 </a>
