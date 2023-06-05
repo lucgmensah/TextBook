@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../recherche/index.php">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     Recherche
                 </a>
